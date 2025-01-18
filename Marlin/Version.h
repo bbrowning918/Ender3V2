@@ -28,7 +28,7 @@
 /**
  * Marlin release version identifier
  */
-#define SHORT_BUILD_VERSION "2.1.3 MRiscoC"
+#define SHORT_BUILD_VERSION "2.1.3 Ben"
 
 /**
  * Verbose version identifier which should contain a reference to the location
@@ -37,7 +37,7 @@
 #if ENABLED(IS_DEMO)
   #define DETAILED_BUILD_VERSION SHORT_BUILD_VERSION " DEMO, NOT FOR PRODUCTION"
 #else
-  #define DETAILED_BUILD_VERSION SHORT_BUILD_VERSION " Ender3V2-422-MM, based on bugfix-2.1.x"
+  #define DETAILED_BUILD_VERSION SHORT_BUILD_VERSION "Ender3V2-422-BLT"
 #endif
 
 /**
@@ -53,7 +53,7 @@
 /**
  * Defines a generic printer name to be output to the LCD after booting Marlin.
  */
-#define MACHINE_NAME "Ender 3V2"
+#define MACHINE_NAME "Ben's E3V2"
 
 /**
  * The SOURCE_CODE_URL is the location where users will find the Marlin Source
