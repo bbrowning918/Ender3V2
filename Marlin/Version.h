@@ -28,7 +28,7 @@
 /**
  * Marlin release version identifier
  */
-#define SHORT_BUILD_VERSION "2.1.3 Ben"
+#define SHORT_BUILD_VERSION "2.1.3"
 
 /**
  * Verbose version identifier which should contain a reference to the location
@@ -37,7 +37,7 @@
 #if ENABLED(IS_DEMO)
   #define DETAILED_BUILD_VERSION SHORT_BUILD_VERSION " DEMO, NOT FOR PRODUCTION"
 #else
-  #define DETAILED_BUILD_VERSION SHORT_BUILD_VERSION "Ender3V2-422-BLT"
+  #define DETAILED_BUILD_VERSION SHORT_BUILD_VERSION "Ender3V2-422-BLT from MRiscoC"
 #endif
 
 /**
