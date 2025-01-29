@@ -1351,7 +1351,7 @@
  * The probe replaces the Z-MIN endstop and is used for Z homing.
  * (Automatically enables USE_PROBE_FOR_Z_HOMING.)
  */
-//#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN  // Probe connected to BLTouch port
+//#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
 
 // Force the use of the probe for Z-axis homing
 #define USE_PROBE_FOR_Z_HOMING
@@ -1411,7 +1411,7 @@
 /**
  * The BLTouch probe uses a Hall effect sensor and emulates a servo.
  */
-#define BLTOUCH  // 3D/CR/BLTouch version
+#define BLTOUCH
 
 /**
  * MagLev V4 probe by MDD
@@ -1658,13 +1658,13 @@
  * Example: `M851 Z-5` with a CLEARANCE of 4  =>  9mm from bed to nozzle.
  *     But: `M851 Z+1` with a CLEARANCE of 2  =>  2mm from bed to nozzle.
  */
-#define Z_CLEARANCE_DEPLOY_PROBE   5 // (mm) Z Clearance for Deploy/Stow  // MRiscoC Increase speed
-#define Z_CLEARANCE_BETWEEN_PROBES  5 // (mm) Z Clearance between probe points  // MRiscoC Increase probe compatibility
-#define Z_CLEARANCE_MULTI_PROBE     5 // (mm) Z Clearance between multiple probes  // MRiscoC Increase speed
+#define Z_CLEARANCE_DEPLOY_PROBE   5 // (mm) Z Clearance for Deploy/Stow
+#define Z_CLEARANCE_BETWEEN_PROBES  5 // (mm) Z Clearance between probe points
+#define Z_CLEARANCE_MULTI_PROBE     5 // (mm) Z Clearance between multiple probes
 #define Z_PROBE_ERROR_TOLERANCE     3 // (mm) Tolerance for early trigger (<= -probe.offset.z + ZPET)
-//#define Z_AFTER_PROBING           5 // (mm) Z position after probing is done
+#define Z_AFTER_PROBING           5 // (mm) Z position after probing is done
 
-#define Z_PROBE_LOW_POINT          -3 // (mm) Farthest distance below the trigger-point to go before stopping  // MRiscoC allows reach lower points
+#define Z_PROBE_LOW_POINT          -3 // (mm) Farthest distance below the trigger-point to go before stopping
 
 // For M851 provide ranges for adjusting the X, Y, and Z probe offsets
 //#define PROBE_OFFSET_XMIN -50   // (mm)
@@ -1675,7 +1675,7 @@
 //#define PROBE_OFFSET_ZMAX  20   // (mm)
 
 // Enable the M48 repeatability test to test probe accuracy
-#define Z_MIN_PROBE_REPEATABILITY_TEST  // MRiscoC Enable M48 repeatability test
+#define Z_MIN_PROBE_REPEATABILITY_TEST
 
 // Before deploy/stow pause for user confirmation
 //#define PAUSE_BEFORE_DEPLOY_STOW
@@ -1695,10 +1695,10 @@
   //#define WAIT_FOR_BED_HEATER     // Wait for bed to heat back up between probes (to improve accuracy)
   //#define WAIT_FOR_HOTEND         // Wait for hotend to heat back up between probes (to improve accuracy & prevent cold extrude)
 #endif
-#define PROBING_FANS_OFF          // Turn fans off when probing  // MRiscoC Turn fans off for avoid vibrations and interference
+#define PROBING_FANS_OFF          // Turn fans off when probing 
 //#define PROBING_ESTEPPERS_OFF     // Turn all extruder steppers off when probing
 //#define PROBING_STEPPERS_OFF      // Turn all steppers off (unless needed to hold position) when probing (including extruders)
-#define DELAY_BEFORE_PROBING 200  // (ms) To prevent vibrations from triggering piezo sensors  // MRiscoC Wait for stability
+#define DELAY_BEFORE_PROBING 200  // (ms) To prevent vibrations from triggering piezo sensors
 
 // Require minimum nozzle and/or bed temperature for probing
 //#define PREHEAT_BEFORE_PROBING
@@ -1822,8 +1822,8 @@
 #define X_MIN_POS -6
 #define Y_MIN_POS -6
 #define Z_MIN_POS 0
-#define X_MAX_POS X_BED_SIZE
-#define Y_MAX_POS Y_BED_SIZE
+#define X_MAX_POS 224
+#define Y_MAX_POS 224
 #define Z_MAX_POS 250  // Ender Configs
 //#define I_MIN_POS 0
 //#define I_MAX_POS 50
@@ -2035,7 +2035,7 @@
  */
 //#define AUTO_BED_LEVELING_3POINT
 //#define AUTO_BED_LEVELING_LINEAR
-#define AUTO_BED_LEVELING_BILINEAR  // MRiscoC BLTouch auto level
+#define AUTO_BED_LEVELING_BILINEAR
 //#define AUTO_BED_LEVELING_UBL
 //#define MESH_BED_LEVELING
 
@@ -2051,7 +2051,7 @@
  * leveling immediately after G28.
  */
 #define RESTORE_LEVELING_AFTER_G28
-// #define ENABLE_LEVELING_AFTER_G28
+//#define ENABLE_LEVELING_AFTER_G28
 
 /**
  * Auto-leveling needs preheating
@@ -2210,13 +2210,13 @@
 #define LCD_BED_TRAMMING  // ProUI has a bed tramming menu
 
 #if ENABLED(LCD_BED_TRAMMING)
-  #define BED_TRAMMING_INSET_LFRB { 50, 50, 50, 50 } // (mm) Left, Front, Right, Back insets  // ProUI use mesh insets for bed tramming
+  #define BED_TRAMMING_INSET_LFRB { 50, 50, 50, 50 } // (mm) Left, Front, Right, Back insets
   #define BED_TRAMMING_HEIGHT      0.2        // (mm) Z height of nozzle at tramming points
   #define BED_TRAMMING_Z_HOP       5.0        // (mm) Z height of nozzle between tramming points
   #define BED_TRAMMING_INCLUDE_CENTER       // Move to the center after the last corner
-  #define BED_TRAMMING_USE_PROBE  // Use a probe if it is available
+  #define BED_TRAMMING_USE_PROBE
   #if ENABLED(BED_TRAMMING_USE_PROBE)
-    #define BED_TRAMMING_PROBE_TOLERANCE 0.05  // (mm)  // ProUI bed tramming wizard tolerance
+    #define BED_TRAMMING_PROBE_TOLERANCE 0.05  // (mm)
     #define BED_TRAMMING_VERIFY_RAISED        // After adjustment triggers the probe, re-probe to verify
     //#define BED_TRAMMING_AUDIO_FEEDBACK
   #endif
@@ -2250,7 +2250,7 @@
 // For DELTA this is the top-center of the Cartesian print volume.
 //#define MANUAL_X_HOME_POS 0
 //#define MANUAL_Y_HOME_POS 0
-//#define MANUAL_Z_HOME_POS 0
+#define MANUAL_Z_HOME_POS -2.3
 //#define MANUAL_I_HOME_POS 0
 //#define MANUAL_J_HOME_POS 0
 //#define MANUAL_K_HOME_POS 0
@@ -2265,7 +2265,7 @@
  * - Allows Z homing only when XY positions are known and trusted.
  * - If stepper drivers sleep, XY homing may be required again before Z homing.
  */
-#define Z_SAFE_HOMING  // MRiscoC Homing Z at center of bed
+#define Z_SAFE_HOMING
 
 #if ENABLED(Z_SAFE_HOMING)
   #define Z_SAFE_HOMING_X_POINT X_CENTER  // (mm) X point for Z homing
@@ -2393,13 +2393,13 @@
 #define PREHEAT_1_LABEL       "PLA"
 #define PREHEAT_1_TEMP_HOTEND  180
 #define PREHEAT_1_TEMP_BED     50
-// #define PREHEAT_1_TEMP_CHAMBER 35
+//#define PREHEAT_1_TEMP_CHAMBER 35
 #define PREHEAT_1_FAN_SPEED    128 // Value from 0 to 255
 
 #define PREHEAT_2_LABEL       "PETG"
 #define PREHEAT_2_TEMP_HOTEND  210
 #define PREHEAT_2_TEMP_BED     60
-// #define PREHEAT_2_TEMP_CHAMBER 35
+//#define PREHEAT_2_TEMP_CHAMBER 35
 #define PREHEAT_2_FAN_SPEED    128 // Value from 0 to 255
 
 #define PREHEAT_3_LABEL       "TPU"
@@ -2407,10 +2407,10 @@
 #define PREHEAT_3_TEMP_BED     70
 #define PREHEAT_3_FAN_SPEED    128
 
-// #define PREHEAT_4_LABEL       "CUSTOM"
-// #define PREHEAT_4_TEMP_HOTEND  190
-// #define PREHEAT_4_TEMP_BED     50
-// #define PREHEAT_4_FAN_SPEED    128
+//#define PREHEAT_4_LABEL       "CUSTOM"
+//#define PREHEAT_4_TEMP_HOTEND  190
+//#define PREHEAT_4_TEMP_BED     50
+//#define PREHEAT_4_FAN_SPEED    128
 
 // @section motion
 

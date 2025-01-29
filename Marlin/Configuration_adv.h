@@ -1596,7 +1596,7 @@
   #endif
 
   #define SOUND_MENU_ITEM   // Add a mute option to the LCD menu  // MRiscoC Enable Sound Menu Item
-  // #define SOUND_ON_DEFAULT    // Buzzer/speaker default enabled state
+  //#define SOUND_ON_DEFAULT    // Buzzer/speaker default enabled state
 
   #if HAS_WIRED_LCD
     //#define DOUBLE_LCD_FRAMERATE        // Not recommended for slow boards.
